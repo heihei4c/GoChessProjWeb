@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Go Chessboard and Piece Recognition System API Demo</title>
+	<link rel="stylesheet" href="tenuki-0.3.1-build/tenuki.css"></link>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="styles.css"/>
+	<script src="tenuki-0.3.1-build/tenuki.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>Go Chessboard and Piece Recognition API Demo</h2>
+		<h3>Upload your image file</h3>
+		<div class="drag-area">
+			<div class="icon">
+				<i class="fas fa-images"></i>
+			</div>
+
+			<span class="header">
+				Drag & Drop
+			</span>
+			<span class="header">or <span class="button">browse</span></span>
+			<input type="file" hidden />
+			<span class="support">Supports: JPEG, JPG, PNG</span>
+		</div>
+		<div class="button-area hidden">
+			<span class="button" id="submit">Process Image</span>
+			<div class="divider"></div>
+			<span class="button" id="remove">Remove Image</span>
+		</div>
+		<div class="center tenuki-board"></div>
+	</div>
+	
+
+	<script src="script.js"></script>
+
+	<div class="drag-area-hidden" hidden>
+		<div class="icon">
+			<i class="fas fa-images"></i>
+		</div>
+
+		<span class="header">
+			Drag & Drop
+		</span>
+		<span class="header">or <span class="button">browse</span></span>
+		<input type="file" hidden />
+		<span class="support">Supports: JPEG, JPG, PNG</span>
+	</div>
+</body>
+</html>
