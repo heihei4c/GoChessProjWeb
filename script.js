@@ -10,10 +10,6 @@ let input = document.querySelector('input');
 
 let file;
 
-dragAreaButton.onclick = () => {
-  input.click();   
-};
-
 // when browse
 input.addEventListener('change', function() {
     file = this.files[0];
@@ -115,10 +111,9 @@ $(document).ready(function() {
     });
 
     $('#remove').click(function(){
-        let dragAreaHidden = document.querySelector(".drag-area-hidden");
         dragArea.classList.remove('active');
-        dragArea.innerHTML = dragAreaHidden.innerHTML;
-        dragAreaButton = document.querySelector('.drag-area .button');
+        dragArea.innerHTML = '<div class="icon"><i class="fas fa-images"></i></div><span class="header">Drag & Drop</span><span class="header">or <span class="button" onclick="browseClick()">browse</span></span><input type="file" hidden /><span class="support">Supports: JPEG, JPG, PNG</span>';
+        //dragAreaButton = document.querySelector('.drag-area .button');
         buttonArea.classList.add('hidden');
     });
 });
@@ -147,4 +142,8 @@ function displayFile(){
         dragArea.classList.remove('active');
     }
     //console.log('File is dropped in drag area.');
+}
+
+function browseClick(){
+    input.click();   
 }
