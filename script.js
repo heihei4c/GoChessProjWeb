@@ -61,8 +61,9 @@ $(document).ready(function() {
             url: "https://api.heihei4c.dev/goChessDetectAPI",
             type: "POST",
             data: base64String,
-            processData: false,
-            success: function(response) {
+            processData: false
+        })
+            .done(function(response) {
                     // Parse the JSON output and display it on the page
                 var data = response;
                 $(".tenuki-board").empty();
@@ -102,21 +103,34 @@ $(document).ready(function() {
                     }
 
                 }
-            },
-            error: function() {
-                alert("Error retrieving data.");
-            }
-        });
+            }).fail(function(xhr) {
+                if (xhr.status == 500){
+                    alert("Error Occurred: Unable to process image.");
+                } else if (xhr.status == 404 || xhr.status == 408){
+                    alert("Error Occurred: Connection to server lost.");
+                } else {
+                    alert("Error retrieving data.");
+                }
+
+                removeImage();
+            });
 
     });
 
     $('#remove').click(function(){
-        dragArea.classList.remove('active');
-        dragArea.innerHTML = '<div class="icon"><i class="fas fa-images"></i></div><span class="header">Drag & Drop</span><span class="header">or <span class="button" onclick="browseClick()">browse</span></span><input type="file" hidden /><span class="support">Supports: JPEG, JPG, PNG</span>';
-        //dragAreaButton = document.querySelector('.drag-area .button');
-        buttonArea.classList.add('hidden');
+        removeImage();
     });
 });
+
+function removeImage(){
+    dragArea.classList.remove('active');
+    dragArea.innerHTML = '<div class="icon"><i class="fas fa-images"></i></div><span class="header">Drag & Drop</span><span class="header">or <span class="button" onclick="browseClick()">browse</span></span><input type="file" hidden /><span class="support">Supports: JPEG, JPG, PNG</span>';
+    //dragAreaButton = document.querySelector('.drag-area .button');
+    buttonArea.classList.add('hidden');
+    $(".tenuki-board").empty();
+    var boardElement = document.querySelector(".tenuki-board");
+    var game = new tenuki.Game({ element: boardElement });
+}
 
 function displayFile(){
     let fileType = file.type;
