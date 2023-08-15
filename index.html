@@ -12,7 +12,7 @@
 <body>
 	<div class="container">
 		<h2>Go Chessboard and Piece Recognition API Demo</h2>
-		<h3>Upload your image file</h3>
+		<h3>Upload your image file / Choose demo images below</h3>
 		<div class="drag-area">
 			<div class="icon">
 				<i class="fas fa-images"></i>
@@ -25,6 +25,13 @@
 			<input type="file" hidden />
 			<span class="support">Supports: JPEG, JPG, PNG</span>
 		</div>
+		<div class="image-container">
+			<img src="img\01.jpg" alt="Image 1">
+			<img src="img\02.jpg" alt="Image 2">
+			<img src="img\03.jpg" alt="Image 3">
+			<img src="img\04.jpg" alt="Image 4">
+		</div>
+
 		<div class="button-area hidden">
 			<span class="button" id="submit">Process Image</span>
 			<div class="divider"></div>
@@ -33,6 +40,8 @@
 		<div class="center tenuki-board"></div>
 	</div>
 	
+	
+	  
 
 	<script src="script.js"></script>
 

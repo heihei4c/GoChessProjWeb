@@ -113,6 +113,31 @@ h3 {
     border: 1px solid #ccc;
 }
 
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+  
+.image-container img {
+    width: 100px; /* Initial image size */
+    height: 100px;
+    overflow: hidden;
+    border: 2px solid #1683ff;
+    transition: transform 0.3s ease; /* Adding smooth transition effect */
+}
+  
+.image-container img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+  
+
 .hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.disappear {
     visibility: hidden;
 }
