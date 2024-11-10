@@ -2,8 +2,8 @@
 
 This is a website demo to demonstrate the [Go Chessboard and Piece Recognition API](https://github.com/heihei4c/goChessDetect).
 
-## Demo
-https://heihei4c.github.io/GoChessProjWeb/
+[//]: # (## Demo)
+[//]: # (https://heihei4c.github.io/GoChessProjWeb/)
 
 ## License
 
